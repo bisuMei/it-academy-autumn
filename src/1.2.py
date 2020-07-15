@@ -1,2 +1,2 @@
 name = input('What is your name?\n')
-print ('Hi, %E.' % name)
+print('Hi, %E.' % name)
