@@ -14,7 +14,7 @@ def longest_word(str_):
         в случае если
     """
 
-    marks = ",./&!@#$%^&*:;_"
+    marks = "\'()+-<=>?[\\]`{|}~'_.,"
 
     lst = []
     lst_1 = []
@@ -23,7 +23,7 @@ def longest_word(str_):
     lst.extend(str_)
 
     for quote in marks:
-        lst = [i.replace(quote, '') for i in lst]
+        lst = [i.replace(quote, ' ') for i in lst]
 
     new_str = ''.join(lst)
 
