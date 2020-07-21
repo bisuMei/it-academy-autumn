@@ -14,8 +14,26 @@ def longest_word(str_):
         в случае если
     """
 
-    # write your code here
-    return ''  # write return value here
+    marks = ",./&!@#$%^&*:;"
+
+    lst = []
+    lst_1 = []
+    longest = ''
+
+    lst.extend(str_)
+
+    for quote in marks:
+        lst = [i.replace(quote, '') for i in lst]
+
+    new_str = ''.join(lst)
+
+    lst_1 = new_str.split()
+
+    for i in lst_1:
+        if len(longest) < len(i):
+            longest = i
+
+    return longest
 
 
 if __name__ == '__main__':

@@ -6,17 +6,30 @@
 
 
 def palindrom(n):
-    """Поиск числа фибоначчи.
-
+    """
     :param n: Число.
     :return: Bool. True или False. Является ли число палиндромом.
     """
 
-    # write your code here
-    return ''  # write return value here
+    num_0 = n
+    num_1 = 0
+    result_num = 0
+
+    while num_0 > 0:
+        num_1 = num_0 % 10
+        num_0 //= 10
+        result_num *= 10
+        result_num += num_1
+
+    if result_num == n:
+        return True
+    else:
+        return False
+
+
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 0
+    n = 5456
     print(palindrom(n))

@@ -15,10 +15,12 @@ def total_sum(m, n, s):
         'x rubles y kopecks'
     """
     # write your code here
-    return ''  # write return value here
+    x = m * s
+    y = n * s
+    return "Total amount is " + str(x) + " rubles " + str(y) + " kopecks."
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    m, n, s = '', '', ''
+    m, n, s = 3, 20, 3
     print(total_sum(m, n, s))

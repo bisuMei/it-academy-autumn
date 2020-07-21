@@ -13,8 +13,21 @@ def sub_string(str_):
     :return: строка. Получившееся выражение
     """
 
-    # write your code here
-    return ''  # write return value here
+    lst_str_ = str_.split()
+
+    result = ""
+    lst = []
+
+    for i in lst_str_:
+        for x in i:
+            if x not in lst:
+                lst.append(x)
+            else:
+                continue
+
+    result = "".join(lst)
+
+    return result
 
 
 if __name__ == '__main__':
