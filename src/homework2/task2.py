@@ -1,3 +1,5 @@
+from string import punctuation
+
 """Найти самое длинное слово в введенном предложении.
 
     В случае если их несколько, самое левое в строке Учтите что в предложении
@@ -14,15 +16,13 @@ def longest_word(str_):
         в случае если
     """
 
-    marks = '''!+()-[]{};:'"\,<>./?@#$%^&*_~'''
-
     lst = []
     lst_1 = []
     longest = ''
 
     lst.extend(str_)
 
-    for quote in marks:
+    for quote in punctuation:
         lst = [i.replace(quote, ' ') for i in lst]
 
     new_str = ''.join(lst)
