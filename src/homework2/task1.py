@@ -17,10 +17,13 @@ def total_sum(m, n, s):
     # write your code here
     x = m * s
     y = n * s
+    if y >= 100:
+        x += y // 100
+        y = 0
     return "Total amount is " + str(x) + " rubles " + str(y) + " kopecks."
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    m, n, s = '', '', ''
+    m, n, s = 50, 50, 50
     print(total_sum(m, n, s))
