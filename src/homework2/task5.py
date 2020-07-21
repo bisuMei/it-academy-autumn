@@ -17,7 +17,7 @@ def fibonacci(n):
     elif n == 1 or n == 2:
         return n1
 
-    for i in range(n-2):
+    for i in range(n - 2):
         n3 = n1 + n2
         n1 = n2
         n2 = n3

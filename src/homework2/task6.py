@@ -6,7 +6,8 @@
 
 
 def palindrom(n):
-    """
+    """Palindrom
+
     :param n: Число.
     :return: Bool. True или False. Является ли число палиндромом.
     """
@@ -25,8 +26,6 @@ def palindrom(n):
         return True
     else:
         return False
-
-
 
 
 if __name__ == '__main__':
