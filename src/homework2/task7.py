@@ -107,6 +107,7 @@ so that its each element is strictly larger than
 (and not merely equal to) the element that precedes it.
 """
 
+
 def is_ascending(lst):
     """Ascending list
 
@@ -115,7 +116,7 @@ def is_ascending(lst):
     """
 
     for i in range(1, len(lst)):
-        n = lst[-1+i]
+        n = lst[-1 + i]
         k = lst[i]
         if len(lst) < 2:
             break
