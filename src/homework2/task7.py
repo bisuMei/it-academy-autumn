@@ -170,12 +170,12 @@ def decodeMorse(morse_code):
 
 """
 Sun Angle:
-Your task is to find the angle of the sun above the horizon knowing the time 
+Your task is to find the angle of the sun above the horizon knowing the time
 of the day.
 Input data:
 the sun rises in the East at 6:00 AM, which corresponds to the angle
 of 0 degrees.
-At 12:00 PM the sun reaches its zenith, which means that the angle 
+At 12:00 PM the sun reaches its zenith, which means that the angle
 equals 90 degrees.
 6:00 PM is the time of the sunset so the angle is 180 degrees.
 If the input will be the time of the night (before 6:00 AM or after 6:00 PM),
@@ -189,16 +189,17 @@ def sun_angle(time):
     :param time: The time of the day
     :return: The angle of the sun, rounded to 2 decimal places.
     """
-    time_lst = time.split(':')
-    one_hour_angle = 15
-    one_minute_angle = 0.25
-    if int(time_lst[0]) == 18 and int(time_lst[1]):
+    t_lst = time.split(':')
+    #one_h_ang and one_m_ang - angles hour and minute
+    one_h_ang = 15
+    one_m_ang = 0.25
+    if int(t_lst[0]) == 18 and int(t_lst[1]):
         return "I don't see the sun!"
-    elif int(time_lst[0]) >= 6 and int(time_lst[0]) <= 18:
-        sun_angle = (int(time_lst[0]) - 6) * one_hour_angle + int(time_lst[1]) * one_minute_angle
+    elif int(t_lst[0]) >= 6 and int(t_lst[0]) <= 18:
+        sun_angle = (int(t_lst[0]) - 6) * one_h_ang + int(t_lst[1]) * one_m_ang
         return sun_angle
     else:
         return "I don't see the sun!"
 
-# Example:
-# print(sun_angle('12:15'))
+#Example:
+#print(sun_angle('12:15'))
