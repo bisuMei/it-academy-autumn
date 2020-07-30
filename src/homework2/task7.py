@@ -190,7 +190,7 @@ def sun_angle(time):
     :return: The angle of the sun, rounded to 2 decimal places.
     """
     t_lst = time.split(':')
-    #one_h_ang and one_m_ang - angles hour and minute
+    # one_h_ang and one_m_ang - angles hour and minute
     one_h_ang = 15
     one_m_ang = 0.25
     if int(t_lst[0]) == 18 and int(t_lst[1]):
@@ -201,5 +201,5 @@ def sun_angle(time):
     else:
         return "I don't see the sun!"
 
-#Example:
-#print(sun_angle('12:15'))
+# Example:
+# print(sun_angle('12:15'))
