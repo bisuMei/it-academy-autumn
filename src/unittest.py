@@ -1,4 +1,7 @@
 import unittest
+"""
+Test the function
+"""
 
 
 def median(pool):
