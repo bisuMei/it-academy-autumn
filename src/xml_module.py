@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as etree
 """
-The xml.etree.ElementTree module implements a simple 
+The xml.etree.ElementTree module implements a simple
 and efficient API for parsing and creating XML data
 """
 
