@@ -1,3 +1,8 @@
+"""
+Implementation of  a solve strategy in a game
+"""
+
+
 BOARD_SIZE = 8
 
 
