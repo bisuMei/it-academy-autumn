@@ -1,4 +1,9 @@
 import xml.etree.ElementTree as etree
+"""
+The xml.etree.ElementTree module implements a simple 
+and efficient API for parsing and creating XML data
+"""
+
 
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
