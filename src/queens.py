@@ -1,3 +1,8 @@
+"""
+Create a board with queens
+"""
+
+
 BOARD_SIZE = 8
 
 
