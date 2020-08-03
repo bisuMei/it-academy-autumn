@@ -1,5 +1,9 @@
 # indent your Python code to put into an email
 import glob
+"""
+Unix style pathname pattern expansion
+"""
+
 
 # glob supports Unix style pathname extensions
 python_files = glob.glob('*.py')
