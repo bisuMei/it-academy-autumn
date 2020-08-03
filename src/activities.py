@@ -1,4 +1,7 @@
 from time import localtime
+"""
+Print what you should do according day time
+"""
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
