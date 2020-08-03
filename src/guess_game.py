@@ -1,4 +1,8 @@
 import random
+"""
+Game where you should guess a number
+"""
+
 
 guesses_made = 0
 
