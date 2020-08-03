@@ -1,4 +1,7 @@
 import itertools
+"""
+Generator of prime numbers
+"""
 
 
 def iter_primes():
