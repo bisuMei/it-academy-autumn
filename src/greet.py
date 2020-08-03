@@ -1,3 +1,8 @@
+"""
+Greet function
+"""
+
+
 def greet(name):
     print('Hello', name)
 
