@@ -1,4 +1,7 @@
 import csv
+"""
+Work with files with other extension
+"""
 
 
 # need to define cmp function in Python 3
