@@ -1,3 +1,8 @@
+"""
+Format string with old method and while cycle
+"""
+
+
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
