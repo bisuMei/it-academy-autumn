@@ -16,5 +16,5 @@ for i in range(1, 101):
         print(i)
 
 # version 2
-fizzbuzz = [('fizz'*(not i % 3) + 'buzz'*(not i % 5) or i)
+fizzbuzz = [('fizz' * (not i % 3) + 'buzz' * (not i % 5) or i)
             for i in range(1, 101)]

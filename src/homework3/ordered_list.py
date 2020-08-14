@@ -10,5 +10,5 @@
 """
 
 lst_ = [1, 2, 8, 0, 7, 0, 4, 10, 12, 89, 0, 0, 74]
-result = [num for num in lst_ if num] + [0]*lst_.count(0)
+result = [num for num in lst_ if num] + [0] * lst_.count(0)
 print(result)
