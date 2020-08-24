@@ -15,22 +15,22 @@ in the dictionary with 0 (zero) value.
 """
 
 
-def popular_words(string, list):
+def popular_words(string, list_):
     """Popular words
 
     :param string:
-    :param list:
+    :param list_:
     :return: The dict where the search words are the keys and values
              are the number of times when those words are occurring
              in a given text.
     """
 
-    my_dict = {}
-    new_str = string.lower()
-    split_list = new_str.split()
-    for x in list:
-        my_dict.update({x: split_list.count(x)})
-    return my_dict
+    count_pop_words = {}
+    str_lowercase = string.lower()
+    list_of_str_words = str_lowercase.split()
+    for word in list_:
+        count_pop_words.update({word: list_of_str_words.count(word)})
+    return count_pop_words
 
 
 # Example:
@@ -39,7 +39,7 @@ def popular_words(string, list):
 # I had just begun
 # When I was Two
 # I was nearly new
-# ''', ['i', 'was', 'three', 'nearly']))
+# ''', ['i', 'was', 'three', 'nearly', 'wtf']))
 
 
 """
@@ -88,7 +88,6 @@ def is_isogram(string):
     new_str = string.lower()
     lst_ = []
     dict_ = {}
-    count = 0
     lst_.extend(new_str)
 
     for i in lst_:
@@ -124,48 +123,50 @@ and return a decoded human-readable string.
 """
 
 
-def decodeMorse(morse_code):
+def decode_morse(morse_code):
     """Decoder
 
     :param morse_code:
     :return: human-readable string
     """
-    morse_code_dict = {'A': '.-', 'B': '-...',
-                       'C': '-.-.', 'D': '-..', 'E': '.',
-                       'F': '..-.', 'G': '--.', 'H': '....',
-                       'I': '..', 'J': '.---', 'K': '-.-',
-                       'L': '.-..', 'M': '--', 'N': '-.',
-                       'O': '---', 'P': '.--.', 'Q': '--.-',
-                       'R': '.-.', 'S': '...', 'T': '-',
-                       'U': '..-', 'V': '...-', 'W': '.--',
-                       'X': '-..-', 'Y': '-.--', 'Z': '--..',
-                       '1': '.----', '2': '..---', '3': '...--',
-                       '4': '....-', '5': '.....', '6': '-....',
-                       '7': '--...', '8': '---..', '9': '----.',
-                       '0': '-----', ', ': '--..--', '.': '.-.-.-',
-                       '?': '..--..', '/': '-..-.', '-': '-....-',
-                       '(': '-.--.', ')': '-.--.-', '!': '-.-.--',
-                       'SOS': '...---...'}
+    chart_of_morse = {'A': '.-', 'B': '-...',
+                      'C': '-.-.', 'D': '-..', 'E': '.',
+                      'F': '..-.', 'G': '--.', 'H': '....',
+                      'I': '..', 'J': '.---', 'K': '-.-',
+                      'L': '.-..', 'M': '--', 'N': '-.',
+                      'O': '---', 'P': '.--.', 'Q': '--.-',
+                      'R': '.-.', 'S': '...', 'T': '-',
+                      'U': '..-', 'V': '...-', 'W': '.--',
+                      'X': '-..-', 'Y': '-.--', 'Z': '--..',
+                      '1': '.----', '2': '..---', '3': '...--',
+                      '4': '....-', '5': '.....', '6': '-....',
+                      '7': '--...', '8': '---..', '9': '----.',
+                      '0': '-----', ', ': '--..--', '.': '.-.-.-',
+                      '?': '..--..', '/': '-..-.', '-': '-....-',
+                      '(': '-.--.', ')': '-.--.-', '!': '-.-.--',
+                      'SOS': '...---...'}
 
+    # chars_for_word is a symbols after encoded
     chars_for_word = []
-    words = []
-    split_by_words = morse_code.split('   ')
-    for i in range(len(split_by_words)):
-        morse_word = split_by_words[i].split()
-        for unit in morse_word:
-            if unit.isalnum():
-                chars_for_word.append(" " + unit + " ")
-            for char, morse in morse_code_dict.items():
-                if unit == morse:
+    encoded_words = []
+    # as 3 spaces are used to separate words, split morse code by morse words
+    split_by_morse_words = morse_code.split('   ')
+    for i in range(len(split_by_morse_words)):
+        morse_word = split_by_morse_words[i].split()
+        for symbol in morse_word:
+            if symbol.isalnum():
+                chars_for_word.append(" " + symbol + " ")
+            for char, morse in chart_of_morse.items():
+                if symbol == morse:
                     chars_for_word.append(char)
-        words.append("".join(chars_for_word))
+        encoded_words.append("".join(chars_for_word))
         chars_for_word.clear()
-    result = " ".join(words)
+    result = " ".join(encoded_words)
     return result.strip()
 
 
 # Example:
-# print(decodeMorse('.... . -.--   .--- ..- -.. .'))
+print(decode_morse('.... . -.--   .--- ..- -.. .'))
 
 
 """
@@ -195,11 +196,11 @@ def sun_angle(time):
     one_m_ang = 0.25
     if int(t_lst[0]) == 18 and int(t_lst[1]):
         return "I don't see the sun!"
-    elif int(t_lst[0]) >= 6 and int(t_lst[0]) <= 18:
-        sun_angle = (int(t_lst[0]) - 6) * one_h_ang + int(t_lst[1]) * one_m_ang
-        return sun_angle
+    elif 6 <= int(t_lst[0]) <= 18:
+        sun_angle_ = (int(t_lst[0]) - 6) * one_h_ang + int(t_lst[1]) * one_m_ang
+        return sun_angle_
     else:
         return "I don't see the sun!"
 
 # Example:
-# print(sun_angle('12:15'))
+# print(sun_angle('12:14'))

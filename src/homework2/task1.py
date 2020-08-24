@@ -15,12 +15,8 @@ def total_sum(m, n, s):
         'x rubles y kopecks'
     """
     # write your code here
-    x = m * s
-    y = n * s
-    if y >= 100:
-        x += y // 100
-        y %= 100
-    return str(x) + " rubles " + str(y) + " kopecks"
+    total = str((m + n / 100) * s).split('.')
+    return "{0} rubles {1} kopecks".format(total[0], int(total[1]))
 
 
 if __name__ == '__main__':

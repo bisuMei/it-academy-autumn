@@ -18,25 +18,20 @@ def count_letters(str_):
     alph = '''ABCDEFGHIJKLMNOPQRSTUVWXYZ
               abcdefghijklmnopqrstuvwxyz'''
 
-    str_lst = []
-
-    for letter in alph:
-        for i in str_:
-            if letter is i:
-                str_lst.append(letter)
+    str_lst = [letter for letter in str_ if letter in alph]
 
     new_str = "".join(str_lst)
 
-    for i in new_str:
-        if i.islower():
+    for letter in new_str:
+        if letter.islower():
             low_number += 1
-        elif i.isupper():
+        else:
             up_number += 1
 
-    return (low_number, up_number)  # write return value here
+    return low_number, up_number  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
+    str_ = 'GGGhhh999'
     print(count_letters(str_))

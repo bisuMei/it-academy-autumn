@@ -10,21 +10,15 @@ def fibonacci(n):
     :return: Число. n-ое число Фибоначчи
     """
 
-    n1, n2 = 1, 1
-
-    if n == 0:
-        return "Enter num more than null"
-    elif n == 1 or n == 2:
-        return n1
-
-    for i in range(n - 2):
-        n3 = n1 + n2
-        n1 = n2
-        n2 = n3
-    return n3
+    if not n:
+        return "Enter positive number"
+    n1 = n2 = 1
+    for i in range(2, n):
+        n1, n2 = n2, n1 + n2
+    return n2
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 5
+    n = 10
     print(fibonacci(n))
