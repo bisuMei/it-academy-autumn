@@ -3,10 +3,10 @@
 """
 
 
-def count_letters(str_):
+def count_letters(string):
     """Подсчет символов.
 
-    :param str_: входная строка
+    :param string: входная строка
     :return: кортеж. (low_number, up_number). low_number - количество строчных,
                                               up_number - количество прописных.
     """
@@ -18,8 +18,7 @@ def count_letters(str_):
     alph = '''ABCDEFGHIJKLMNOPQRSTUVWXYZ
               abcdefghijklmnopqrstuvwxyz'''
 
-    str_lst = [letter for letter in str_ if letter in alph]
-
+    str_lst = [letter for letter in string if letter in alph]
     new_str = "".join(str_lst)
 
     for letter in new_str:
@@ -28,7 +27,7 @@ def count_letters(str_):
         else:
             up_number += 1
 
-    return low_number, up_number  # write return value here
+    return (low_number, up_number)  # write return value here
 
 
 if __name__ == '__main__':
