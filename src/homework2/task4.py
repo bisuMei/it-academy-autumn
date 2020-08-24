@@ -33,5 +33,5 @@ def count_letters(str_):
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = 'GGGhhh999'
+    str_ = ''
     print(count_letters(str_))

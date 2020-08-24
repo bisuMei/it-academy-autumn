@@ -197,8 +197,8 @@ def sun_angle(time):
     if int(t_lst[0]) == 18 and int(t_lst[1]):
         return "I don't see the sun!"
     elif 6 <= int(t_lst[0]) <= 18:
-        sun_angle_ = (int(t_lst[0]) - 6) * one_h_ang + int(t_lst[1]) * one_m_ang
-        return sun_angle_
+        sun_angl_ = (int(t_lst[0]) - 6) * one_h_ang + int(t_lst[1]) * one_m_ang
+        return sun_angl_
     else:
         return "I don't see the sun!"
 
