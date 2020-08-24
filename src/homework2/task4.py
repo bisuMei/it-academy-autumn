@@ -15,19 +15,17 @@ def count_letters(string):
     low_number = 0
     up_number = 0
 
-    alph = '''ABCDEFGHIJKLMNOPQRSTUVWXYZ
-              abcdefghijklmnopqrstuvwxyz'''
+    alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
     str_lst = [letter for letter in string if letter in alph]
-    new_str = "".join(str_lst)
 
-    for letter in new_str:
+    for letter in str_lst:
         if letter.islower():
             low_number += 1
         else:
             up_number += 1
 
-    return (low_number, up_number)  # write return value here
+    return low_number, up_number  # write return value here
 
 
 if __name__ == '__main__':
