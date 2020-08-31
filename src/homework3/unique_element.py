@@ -15,10 +15,10 @@ def unique(lst_):
     """
     dict_ = {}
     result = []
-    # count elements in list
+
     for i in lst_:
         dict_[i] = dict_.get(i, 0) + 1
-    # add unique elements to final list
+
     for key, value in dict_.items():
         if value == 1:
             result.append(key)
