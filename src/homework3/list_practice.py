@@ -11,14 +11,14 @@
 """
 
 # 1)
-lst = ['a', 'b', 'c', 'd']
+lst = list("abcd")
 new_lst = [list(lst[i] + chr_ for chr_ in lst[1:])for i in range(2)]
 result = new_lst[0] + new_lst[1]
 print(result)
 # 2)
 print(result[::2])
 # 3)
-nums = [1, 2, 3, 4]
+nums = list("1234")
 chr_ = "a"
 final = [str(num) + chr_ for num in nums]
 print(final)
