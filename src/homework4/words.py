@@ -8,7 +8,7 @@
 
 
 def words(string_):
-    """
+    """Count words
 
     :param string_:
     :return: int
