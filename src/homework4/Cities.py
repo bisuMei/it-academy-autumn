@@ -1,5 +1,5 @@
 """
-Дан список стран и городов каждой страны. Затем даны названия городов.
+Дан список стран и городов каждой страны. Затем даны назв. городов.
 Для каждого города укажите, в какой стране он находится.
 Входные данные:
 Программа получает на вход количество стран N. Далее идет N строк,
@@ -15,18 +15,18 @@ M запросов — названия каких-то M городов, пер
 n = input("Enter amount of countries: ")
 countries_lst = []
 require_cities = []
-hash_table = {}
+common_dict = {}
 
 for i in range(int(n)):
     countries = input("Enter country with cities: ")
     countries_lst = countries.split()
-    for i in countries_lst[1:]:
-        hash_table[i] = hash_table.get(i, countries_lst[0])
+    for city in countries_lst[1:]:
+        common_dict[city] = common_dict.get(city, countries_lst[0])
 
 m = input("Enter amount of requires: ")
 
 for i in range(int(m)):
     cities = input("Enter name of city: ")
-    for key,value in hash_table.items():
+    for key, value in common_dict.items():
         if cities == key:
             print(value)

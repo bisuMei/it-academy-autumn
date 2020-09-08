@@ -12,21 +12,19 @@ quantity_all_known = 0
 quantity_rear_known = 0
 lst_language = []
 
-
 n = input("Enter amount of students: ")
 for i in range(int(n)):
     m = input("Number of {} student languages: ".format(i + 1))
     for x in range(int(m)):
-        languages = input("Enter language of {} student: ".format(i + 1))
+        languages = input("Enter {} language of {} student: "
+                          .format(x + 1, i + 1))
         lst_language.append(languages)
         students_dict[i + 1] = lst_language[:]
     lst_language.clear()
 
-
 for languages_ in students_dict.values():
     for language in languages_:
         count_language[language] = count_language.get(language, 0) + 1
-
 
 for key, value in count_language.items():
     if count_language[key] == int(n):
@@ -41,7 +39,6 @@ while count_language:
     else:
         rear_known.append(name)
     count_language.pop(name)
-
 
 print(quantity_all_known)
 
