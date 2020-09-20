@@ -15,11 +15,15 @@ def pairs(string):
     :param string: delimiter whitespace
     :return: number of pairs
     """
-    count_pairs = 0
-    lst_ = string.split()
-    while lst_:
-        for i in range(1, len(lst_)):
-            if lst_[0] == lst_[i]:
-                count_pairs += 1
-        lst_.remove(lst_[0])
-    return count_pairs
+
+    count_nums = {}
+    result = []
+    lst = string.split()
+    for num in lst:
+        count_nums[num] = count_nums.get(num, 0) + 1
+
+    for amount in count_nums.values():
+        pairs = amount * (amount - 1) // 2
+        result.append(pairs)
+
+    return sum(result)
