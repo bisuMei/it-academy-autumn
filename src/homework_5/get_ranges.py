@@ -22,13 +22,13 @@ def get_ranges(lst_):
     copy_lst_of_nums = []
     previous_diff = 0
 
-    for i in range(len(lst_)-1):
+    for i in range(len(lst_) - 1):
         # diff_ is a difference between current and next number
-        current_diff = lst_[i+1] - lst_[i]
+        current_diff = lst_[i + 1] - lst_[i]
         # check nums for sequence
         if current_diff == 1:
             lst_of_nums.append(lst_[i])
-            lst_of_nums.append(lst_[i+1])
+            lst_of_nums.append(lst_[i + 1])
             copy_lst_of_nums = lst_of_nums[:]
             previous_diff = current_diff
         else:

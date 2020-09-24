@@ -83,6 +83,7 @@ def sun_angle(time='15:24'):
 
 def pairs(string='1 1 1 1'):
     """Pairs
+
     :param string: delimiter whitespace
     :return: number of pairs
     """

@@ -47,7 +47,6 @@ with open('ratings.list') as file:
             str_ += '{0} {1}\n'.format(el, '|>' * count_elem[el])
         return str_
 
-
     hist_rates = open("ratings.txt", "w")
     frequency_elem(rates)
     hist_rates.write('Ratings histogram\n')

@@ -23,6 +23,3 @@ def sums(a, b):
 print(sums(5, 9))
 print(sums(2, 6))
 print(sums(9, 9))
-
-
-
