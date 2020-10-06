@@ -14,19 +14,17 @@ M запросов — названия каких-то M городов, пер
 
 n = input("Enter amount of countries: ")
 countries_lst = []
-require_cities = []
 common_dict = {}
 
 for i in range(int(n)):
-    countries = input("Enter country with cities: ")
-    countries_lst = countries.split()
+    countries_lst = input("Enter country with cities: ").split()
     for city in countries_lst[1:]:
-        common_dict[city] = common_dict.get(city, countries_lst[0])
+        common_dict.setdefault(countries_lst[0], []).append(city)
 
 m = input("Enter amount of requires: ")
 
 for i in range(int(m)):
-    cities = input("Enter name of city: ")
-    for key, value in common_dict.items():
-        if cities == key:
-            print(value)
+    city_ = input("Enter name of a city: ")
+    for country, list_of_cities in common_dict.items():
+        if city_ in list_of_cities:
+            print(country)
