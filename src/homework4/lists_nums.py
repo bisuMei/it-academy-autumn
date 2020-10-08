@@ -8,7 +8,7 @@
 def func(lst_1, lst_2):
     x = set(lst_1)
     y = set(lst_2)
-    final = x ^ y
+    final = x & y
     return len(final)
 
 
@@ -21,7 +21,7 @@ def func(lst_1, lst_2):
 def func_2(lst_1, lst_2):
     x = set(lst_1)
     y = set(lst_2)
-    final = x - y
+    final = x ^ y
     return len(final)
 
 

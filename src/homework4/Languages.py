@@ -5,14 +5,14 @@
 """
 
 students_dict = {}
-count_language = {}
-all_known = []
-rear_known = []
-quantity_all_known = 0
-quantity_rear_known = 0
+all_languages = []
 lst_language = []
+all_lang = set()
+all_known = set()
+
 
 n = input("Enter amount of students: ")
+
 for i in range(int(n)):
     m = input("Number of {} student languages: ".format(i + 1))
     for x in range(int(m)):
@@ -22,28 +22,18 @@ for i in range(int(n)):
         students_dict[i + 1] = lst_language[:]
     lst_language.clear()
 
-for languages_ in students_dict.values():
-    for language in languages_:
-        count_language[language] = count_language.get(language, 0) + 1
+for languages in students_dict.values():
+    all_lang, all_known = set(languages), all_lang
+    all_known = all_known & all_lang
+    all_languages.extend(languages)
 
-for key, value in count_language.items():
-    if count_language[key] == int(n):
-        quantity_all_known += 1
-    else:
-        quantity_rear_known += 1
+rear_known = set(all_languages) - all_known
 
-while count_language:
-    name = max(count_language, key=lambda x: count_language[x])
-    if count_language[name] == int(n):
-        all_known.append(name)
-    else:
-        rear_known.append(name)
-    count_language.pop(name)
 
-print(quantity_all_known)
+print(len(all_known))
 
-print(all_known)
+print(list(all_known))
 
-print(quantity_rear_known)
+print(len(rear_known))
 
-print(rear_known)
+print(list(rear_known))

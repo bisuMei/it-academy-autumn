@@ -14,12 +14,7 @@ def words(string_):
     :return: int
     """
 
-    min_word_len = 2
     words_lst = string_.split()
-
-    for word in words_lst:
-        if len(word) < min_word_len:
-            words_lst.remove(word)
 
     set_of_words = set(words_lst)
 
