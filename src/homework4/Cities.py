@@ -15,7 +15,6 @@ M запросов — названия каких-то M городов, пер
 n = input("Enter amount of countries: ")
 
 countries_lst = []
-
 common_dict = {}
 
 for i in range(int(n)):
