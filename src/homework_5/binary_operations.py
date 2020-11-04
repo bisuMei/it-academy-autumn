@@ -5,24 +5,25 @@
 
 
 def closes(num):
-    extend = 1
-    two = 2
-    result = 0
+    binary_shift = 1
+    power_of_two = 0
     if num == 1:
         return 1
-    while result < num:
-        result = two << extend
-        if result < num:
-            close_before = result
+    if num == 2:
+      return 2
+    while power_of_two < num:
+        power_of_two = 1 << binary_shift
+        if power_of_two < num:
+            closest_before_num = power_of_two
         else:
-            close_after = result
-        extend += 1
-    diff_1 = num - close_before
-    diff_2 = close_after - num
+            closest_after_num = power_of_two
+        binary_shift += 1
+    diff_1 = num % closest_before_num
+    diff_2 = closest_after_num % num
     if diff_1 < diff_2:
-        return close_before
+        return closest_before_num
     else:
-        return close_after
+        return closest_after_num
 
 
 """
@@ -32,16 +33,13 @@ def closes(num):
 
 
 def delimiter(num):
-    delim = 1
-    max_delim = 0
+    power_of_two = 1
+    max_delimiter = 0
     rest = 0
 
     while rest == 0:
-        max_delim = delim
-        delim = delim << 1
-        rest = num % delim
+        max_delimiter = power_of_two
+        power_of_two = power_of_two << 1
+        rest = num % power_of_two
 
-    return max_delim
-
-
-print(delimiter(16))
+    return max_delimiter
