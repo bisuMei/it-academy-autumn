@@ -5,21 +5,17 @@
 
 
 def dec(func):
-    var = ()
 
     def wrapper(*args, **kwargs):
-        nonlocal var
         result = func(*args, **kwargs)
-        var += (result,)
-        return var
+        all_ = open("results.txt", 'a')
+        all_.write(str(result))
+        all_.write('\n')
+        all_.close()
+        return result
     return wrapper
 
 
 @dec
 def sums(a, b):
     return a + b
-
-
-print(sums(5, 9))
-print(sums(2, 6))
-print(sums(9, 9))
